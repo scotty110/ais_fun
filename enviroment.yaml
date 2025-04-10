@@ -1,0 +1,16 @@
+name: duckdb 
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - cmake
+  - ninja
+  - fastparquet
+  - pandas
+  - pyarrow
+  - pyspark
+  - python-duckdb
+  - openjdk
+  - ipykernel
+  - shapely
+  - folium
