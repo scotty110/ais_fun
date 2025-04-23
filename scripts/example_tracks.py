@@ -4,14 +4,9 @@ import json
 import glob 
 import os.path
 
-def style_function(feature):
-    return {'color': 'blue', 'weight': 3, 'opacity': 0.7}
 
-def on_each_feature(feature, layer):
-    start_coords = feature['properties']['start']
-    end_coords = feature['properties']['end']
-    popup_text = f"Start: {start_coords}<br>End: {end_coords}"
-    layer.bindPopup(popup_text)
+def style_function(feature):
+    return {'color': '#6C2CED', 'weight': 3, 'opacity': 0.7}
 
 
 if __name__ == '__main__':
@@ -74,19 +69,6 @@ if __name__ == '__main__':
 
     # Create the spatial_tracks view
     spatial_tracks_sql = f"""\
-            CREATE OR REPLACE VIEW spatial_tracks AS 
-            WITH ordered_points AS (
-                SELECT MMSI, geom
-                FROM filtered_ais
-                ORDER BY MMSI, BaseDateTime
-            )
-            SELECT MMSI,
-                ST_MakeLine(array_agg(geom)) AS track
-            FROM ordered_points
-            GROUP BY MMSI
-            HAVING COUNT(geom) >= 2
-        """
-    spatial_tracks_sql = f"""\
         CREATE OR REPLACE VIEW spatial_tracks AS 
         WITH ordered_points AS (
             SELECT 
@@ -102,7 +84,7 @@ if __name__ == '__main__':
                 BaseDateTime, 
                 geom,
                 CASE 
-                    WHEN prev_geom IS NULL OR ST_Distance(geom, prev_geom) <= 1000 
+                    WHEN prev_geom IS NULL OR ST_Distance_Spheroid(geom, prev_geom) <= 500 
                     THEN 0 
                     ELSE 1 
                 END AS gap_flag
@@ -121,9 +103,8 @@ if __name__ == '__main__':
             ST_MakeLine(array_agg(geom ORDER BY BaseDateTime)) AS track
         FROM segmented
         GROUP BY MMSI, segment_id
-        HAVING COUNT(geom) >= 2
+        HAVING COUNT(geom) >= 4 
     """
-    
     conn.execute(spatial_tracks_sql)
 
     # Get Count of records (number of tracks)
@@ -140,6 +121,7 @@ if __name__ == '__main__':
         exit()
     
     # Create a map centered on the first track’s start point
+    # Create a map centered on the first track’s start point
     first_geo = json.loads(track_data[0][1])
     first_coords = first_geo.get("coordinates", [])
     if not first_coords:
@@ -148,43 +130,20 @@ if __name__ == '__main__':
     start_lon, start_lat = first_coords[0]
     m = folium.Map(location=[start_lat, start_lon], zoom_start=10)
 
-    # Function to bind a popup to each track feature
-    def on_each_feature(feature, layer):
-        start_coords = feature['properties']['start']
-        end_coords = feature['properties']['end']
-        popup_text = f"Start: {start_coords}<br>End: {end_coords}"
-        layer.bindPopup(popup_text)
-
     # For each track, create a GeoJSON feature with start/end properties and add it to the map.
     for mmsi, track_geo in track_data:
         geo_obj = json.loads(track_geo)
         coords = geo_obj.get("coordinates", [])
         if not coords or len(coords) < 2:
             continue  # Skip if not enough coordinates
-        # Compute start and end markers in [lat, lon] order.
-        start_marker = [coords[0][1], coords[0][0]]
-        end_marker   = [coords[-1][1], coords[-1][0]]
-        
-        # Build a Feature with custom properties.
         feature = {
             "type": "Feature",
             "geometry": geo_obj,
-            "properties": {
-                "mmsi": mmsi,
-                "start": start_marker,
-                "end": end_marker
-            }
+            "properties": {"mmsi": mmsi}
         }
-        
-        # Add the GeoJSON track with the onEachFeature callback.
         folium.GeoJson(
             feature,
-            style_function=lambda feature: {
-                'color': 'blue',
-                'weight': 3,
-                'opacity': 0.7
-            },
-            on_each_feature=on_each_feature
+            style_function=style_function  # initial style blue
         ).add_to(m)
 
     # Save the map to an HTML file.
