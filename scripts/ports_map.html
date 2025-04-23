@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dd42fc36ad3d1c304b16cb1b3039a5b3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_dd42fc36ad3d1c304b16cb1b3039a5b3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dd42fc36ad3d1c304b16cb1b3039a5b3 = L.map(
+                "map_dd42fc36ad3d1c304b16cb1b3039a5b3",
+                {
+                    center: [29.7166690826416, -95.25],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_21db834e8e647d618bb5593fc8889712 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_21db834e8e647d618bb5593fc8889712.addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+            var marker_f4b6ec65d3ca93bfc96e9c1e226cc84d = L.marker(
+                [29.7166690826416, -95.25],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_8c885c9cf3def5f2d5c8ef3603b17a8b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d7e9925e602883789353a1d2f0423d18 = $(`<div id="html_d7e9925e602883789353a1d2f0423d18" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Houston<br>         <b>State:</b> TX<br>         <b>Rank:</b> 1<br>         <b>Tonnage:</b> 275,940,289         </div>`)[0];
+                popup_8c885c9cf3def5f2d5c8ef3603b17a8b.setContent(html_d7e9925e602883789353a1d2f0423d18);
+            
+        
+
+        marker_f4b6ec65d3ca93bfc96e9c1e226cc84d.bindPopup(popup_8c885c9cf3def5f2d5c8ef3603b17a8b)
+        ;
+
+        
+    
+    
+            var marker_b360f41976df07881cc8d9d713675adb = L.marker(
+                [30.049999237060547, -90.5],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_15c2648a4a7dfc9b35245a021f30edd6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_20d653b3c47ab745c5a20f5d53fee01d = $(`<div id="html_20d653b3c47ab745c5a20f5d53fee01d" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of South Louisiana<br>         <b>State:</b> LA<br>         <b>Rank:</b> 2<br>         <b>Tonnage:</b> 225,086,697         </div>`)[0];
+                popup_15c2648a4a7dfc9b35245a021f30edd6.setContent(html_20d653b3c47ab745c5a20f5d53fee01d);
+            
+        
+
+        marker_b360f41976df07881cc8d9d713675adb.bindPopup(popup_15c2648a4a7dfc9b35245a021f30edd6)
+        ;
+
+        
+    
+    
+            var marker_2c7a539568b13f57118a483f731a5057 = L.marker(
+                [27.812780380249023, -97.40721893310547],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_9d675990baf9e1d542d50dfa892c9b46 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ea8003898d420aa9e83fd5a786452dcc = $(`<div id="html_ea8003898d420aa9e83fd5a786452dcc" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Corpus Christi<br>         <b>State:</b> TX<br>         <b>Rank:</b> 3<br>         <b>Tonnage:</b> 150,755,485         </div>`)[0];
+                popup_9d675990baf9e1d542d50dfa892c9b46.setContent(html_ea8003898d420aa9e83fd5a786452dcc);
+            
+        
+
+        marker_2c7a539568b13f57118a483f731a5057.bindPopup(popup_9d675990baf9e1d542d50dfa892c9b46)
+        ;
+
+        
+    
+    
+            var marker_9c139c8ba659a0730f8fc915936cf44f = L.marker(
+                [40.668331146240234, -74.04556274414062],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_7d9ec97b5289a16ef69887350f76478c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5f74b58b97a2355a3cebb7e247437ff6 = $(`<div id="html_5f74b58b97a2355a3cebb7e247437ff6" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of New York and New Jersey<br>         <b>State:</b> NJ/NY<br>         <b>Rank:</b> 4<br>         <b>Tonnage:</b> 123,697,438         </div>`)[0];
+                popup_7d9ec97b5289a16ef69887350f76478c.setContent(html_5f74b58b97a2355a3cebb7e247437ff6);
+            
+        
+
+        marker_9c139c8ba659a0730f8fc915936cf44f.bindPopup(popup_7d9ec97b5289a16ef69887350f76478c)
+        ;
+
+        
+    
+    
+            var marker_45aad11da41e7fd321c22780cc16748f = L.marker(
+                [29.936939239501953, -90.06194305419922],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_53ce8f177613a5a920305cfce3385c5f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_849a9a79f67ddb74581bcc28980d41fb = $(`<div id="html_849a9a79f67ddb74581bcc28980d41fb" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of New Orleans<br>         <b>State:</b> LA<br>         <b>Rank:</b> 5<br>         <b>Tonnage:</b> 81,067,448         </div>`)[0];
+                popup_53ce8f177613a5a920305cfce3385c5f.setContent(html_849a9a79f67ddb74581bcc28980d41fb);
+            
+        
+
+        marker_45aad11da41e7fd321c22780cc16748f.bindPopup(popup_53ce8f177613a5a920305cfce3385c5f)
+        ;
+
+        
+    
+    
+            var marker_6182ebb375b5785653de9a9d5dccc51c = L.marker(
+                [33.755001068115234, -118.21499633789062],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_770b61d162d95e77de9b253349381f29 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ad8b1eb48d462a8142a9725fbe9d4c0c = $(`<div id="html_ad8b1eb48d462a8142a9725fbe9d4c0c" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Long Beach<br>         <b>State:</b> CA<br>         <b>Rank:</b> 6<br>         <b>Tonnage:</b> 79,178,087         </div>`)[0];
+                popup_770b61d162d95e77de9b253349381f29.setContent(html_ad8b1eb48d462a8142a9725fbe9d4c0c);
+            
+        
+
+        marker_6182ebb375b5785653de9a9d5dccc51c.bindPopup(popup_770b61d162d95e77de9b253349381f29)
+        ;
+
+        
+    
+    
+            var marker_6f10c16f1962c8b014b63906b300544f = L.marker(
+                [30.43178939819336, -91.20390319824219],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_a90a8560981a13204371b50ff2ded3ac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_17d53275223e58b84592bc7bb5028bb0 = $(`<div id="html_17d53275223e58b84592bc7bb5028bb0" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Greater Baton Rouge<br>         <b>State:</b> LA<br>         <b>Rank:</b> 7<br>         <b>Tonnage:</b> 71,686,872         </div>`)[0];
+                popup_a90a8560981a13204371b50ff2ded3ac.setContent(html_17d53275223e58b84592bc7bb5028bb0);
+            
+        
+
+        marker_6f10c16f1962c8b014b63906b300544f.bindPopup(popup_a90a8560981a13204371b50ff2ded3ac)
+        ;
+
+        
+    
+    
+            var marker_da85bc187a6952c8f3c876769e6ce74a = L.marker(
+                [30.068330764770508, -94.08444213867188],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_3f70829fd1e8845f916ff9214378ae87 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_522ee72cc9bbf60ba9d70450c0977ee0 = $(`<div id="html_522ee72cc9bbf60ba9d70450c0977ee0" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Beaumont<br>         <b>State:</b> TX<br>         <b>Rank:</b> 8<br>         <b>Tonnage:</b> 70,567,386         </div>`)[0];
+                popup_3f70829fd1e8845f916ff9214378ae87.setContent(html_522ee72cc9bbf60ba9d70450c0977ee0);
+            
+        
+
+        marker_da85bc187a6952c8f3c876769e6ce74a.bindPopup(popup_3f70829fd1e8845f916ff9214378ae87)
+        ;
+
+        
+    
+    
+            var marker_47127a57125099d60673126d656b0705 = L.marker(
+                [33.72999954223633, -118.26249694824219],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_71cc78c33090948f662ddcb670d40b19 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3466a4a45a5c06156edb21ec8fd0b263 = $(`<div id="html_3466a4a45a5c06156edb21ec8fd0b263" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Los Angeles<br>         <b>State:</b> CA<br>         <b>Rank:</b> 9<br>         <b>Tonnage:</b> 59,452,139         </div>`)[0];
+                popup_71cc78c33090948f662ddcb670d40b19.setContent(html_3466a4a45a5c06156edb21ec8fd0b263);
+            
+        
+
+        marker_47127a57125099d60673126d656b0705.bindPopup(popup_71cc78c33090948f662ddcb670d40b19)
+        ;
+
+        
+    
+    
+            var marker_2a4e044273c8831a736950489ebbacbc = L.marker(
+                [36.83543014526367, -76.29827117919922],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_a23226fcee695b753b458b0b9c3c54f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dc9138742484cf3ec18089eeab7e7d2b = $(`<div id="html_dc9138742484cf3ec18089eeab7e7d2b" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Hampton Roads<br>         <b>State:</b> VA<br>         <b>Rank:</b> 10<br>         <b>Tonnage:</b> 58,048,785         </div>`)[0];
+                popup_a23226fcee695b753b458b0b9c3c54f5.setContent(html_dc9138742484cf3ec18089eeab7e7d2b);
+            
+        
+
+        marker_2a4e044273c8831a736950489ebbacbc.bindPopup(popup_a23226fcee695b753b458b0b9c3c54f5)
+        ;
+
+        
+    
+    
+            var marker_2e19ed02a9e1b7f4a7201bee79424e0a = L.marker(
+                [30.712169647216797, -88.0433120727539],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_650fe5af461a633bef25323592a5207f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e15ee0444c7df2f1865c963022eaa96 = $(`<div id="html_0e15ee0444c7df2f1865c963022eaa96" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Mobile<br>         <b>State:</b> AL<br>         <b>Rank:</b> 11<br>         <b>Tonnage:</b> 53,206,561         </div>`)[0];
+                popup_650fe5af461a633bef25323592a5207f.setContent(html_0e15ee0444c7df2f1865c963022eaa96);
+            
+        
+
+        marker_2e19ed02a9e1b7f4a7201bee79424e0a.bindPopup(popup_650fe5af461a633bef25323592a5207f)
+        ;
+
+        
+    
+    
+            var marker_c451a8e47c7a80f87f4b1b3500c92f13 = L.marker(
+                [29.622690200805664, -89.91941833496094],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_07ea712bfd280ef6b6ce44e1755d62d0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_08515551730375b60cd5efb7eced3beb = $(`<div id="html_08515551730375b60cd5efb7eced3beb" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Plaquemines Port<br>         <b>State:</b> LA<br>         <b>Rank:</b> 12<br>         <b>Tonnage:</b> 46,750,799         </div>`)[0];
+                popup_07ea712bfd280ef6b6ce44e1755d62d0.setContent(html_08515551730375b60cd5efb7eced3beb);
+            
+        
+
+        marker_c451a8e47c7a80f87f4b1b3500c92f13.bindPopup(popup_07ea712bfd280ef6b6ce44e1755d62d0)
+        ;
+
+        
+    
+    
+            var marker_be26255a84eb31bf0de0454b98e07795 = L.marker(
+                [32.12871170043945, -81.15190887451172],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_03ec95ee34d7c958a03fb3801fdc6429 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_df8060984c8fde7b0bf58bb75ed14db8 = $(`<div id="html_df8060984c8fde7b0bf58bb75ed14db8" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Savannah<br>         <b>State:</b> GA<br>         <b>Rank:</b> 13<br>         <b>Tonnage:</b> 43,453,044         </div>`)[0];
+                popup_03ec95ee34d7c958a03fb3801fdc6429.setContent(html_df8060984c8fde7b0bf58bb75ed14db8);
+            
+        
+
+        marker_be26255a84eb31bf0de0454b98e07795.bindPopup(popup_03ec95ee34d7c958a03fb3801fdc6429)
+        ;
+
+        
+    
+    
+            var marker_d08b64c67dbbc2cedc0caa1d120e41d5 = L.marker(
+                [30.180830001831055, -93.29666900634766],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_ea0a69eb9ea94ec03df39318e264b378 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_179db937f7d31abf6003f8bd6b60ba6a = $(`<div id="html_179db937f7d31abf6003f8bd6b60ba6a" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Lake Charles<br>         <b>State:</b> LA<br>         <b>Rank:</b> 14<br>         <b>Tonnage:</b> 43,053,658         </div>`)[0];
+                popup_ea0a69eb9ea94ec03df39318e264b378.setContent(html_179db937f7d31abf6003f8bd6b60ba6a);
+            
+        
+
+        marker_d08b64c67dbbc2cedc0caa1d120e41d5.bindPopup(popup_ea0a69eb9ea94ec03df39318e264b378)
+        ;
+
+        
+    
+    
+            var marker_ea65cea754b864df05ea0dfeea820eb3 = L.marker(
+                [29.86709976196289, -93.93692779541016],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_c1e10822c19459572733b4e575499830 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fa799125821e7a064a091d1043d29f62 = $(`<div id="html_fa799125821e7a064a091d1043d29f62" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Port Arthur<br>         <b>State:</b> TX<br>         <b>Rank:</b> 15<br>         <b>Tonnage:</b> 41,222,200         </div>`)[0];
+                popup_c1e10822c19459572733b4e575499830.setContent(html_fa799125821e7a064a091d1043d29f62);
+            
+        
+
+        marker_ea65cea754b864df05ea0dfeea820eb3.bindPopup(popup_c1e10822c19459572733b4e575499830)
+        ;
+
+        
+    
+    
+            var marker_93f1624d8b4e84c2c93643af502dc1ba = L.marker(
+                [28.94169044494629, -95.34567260742188],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_d9a0702b2e927c5d00f4d27b54cb2634 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f4e35e3b10dbebcde038ca8e611e515d = $(`<div id="html_f4e35e3b10dbebcde038ca8e611e515d" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port Freeport<br>         <b>State:</b> TX<br>         <b>Rank:</b> 16<br>         <b>Tonnage:</b> 38,748,662         </div>`)[0];
+                popup_d9a0702b2e927c5d00f4d27b54cb2634.setContent(html_f4e35e3b10dbebcde038ca8e611e515d);
+            
+        
+
+        marker_93f1624d8b4e84c2c93643af502dc1ba.bindPopup(popup_d9a0702b2e927c5d00f4d27b54cb2634)
+        ;
+
+        
+    
+    
+            var marker_919ec6a178ac7f0753d376d891b975e5 = L.marker(
+                [39.31666946411133, -81.55000305175781],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_167aa3a187c7afc7148539255b62f1ee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_90ef0025686fb6c72ef78b59ad8fb6be = $(`<div id="html_90ef0025686fb6c72ef78b59ad8fb6be" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Mid-Ohio Valley Port<br>         <b>State:</b> OH/WV<br>         <b>Rank:</b> 17<br>         <b>Tonnage:</b> 35,939,474         </div>`)[0];
+                popup_167aa3a187c7afc7148539255b62f1ee.setContent(html_90ef0025686fb6c72ef78b59ad8fb6be);
+            
+        
+
+        marker_919ec6a178ac7f0753d376d891b975e5.bindPopup(popup_167aa3a187c7afc7148539255b62f1ee)
+        ;
+
+        
+    
+    
+            var marker_f5c139aa2d9fdc90dfe8befa4aaf5f21 = L.marker(
+                [39.275001525878906, -76.58499908447266],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_b9697a289323c05b0ddd298dd585661a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eb00d7454f08528a4c0d7462942e5efa = $(`<div id="html_eb00d7454f08528a4c0d7462942e5efa" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Baltimore<br>         <b>State:</b> MD<br>         <b>Rank:</b> 18<br>         <b>Tonnage:</b> 35,202,027         </div>`)[0];
+                popup_b9697a289323c05b0ddd298dd585661a.setContent(html_eb00d7454f08528a4c0d7462942e5efa);
+            
+        
+
+        marker_f5c139aa2d9fdc90dfe8befa4aaf5f21.bindPopup(popup_b9697a289323c05b0ddd298dd585661a)
+        ;
+
+        
+    
+    
+            var marker_e4594ad12dfe52d0493c761c02f0ac1c = L.marker(
+                [39.099998474121094, -84.51667022705078],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_685efff4d2e0d30a7297b49f2cad6b9e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_88f9f54bf60607bb05dcc557418e9f8c = $(`<div id="html_88f9f54bf60607bb05dcc557418e9f8c" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Ports of Cincinnati-Northern KY<br>         <b>State:</b> OH/KY<br>         <b>Rank:</b> 19<br>         <b>Tonnage:</b> 34,476,340         </div>`)[0];
+                popup_685efff4d2e0d30a7297b49f2cad6b9e.setContent(html_88f9f54bf60607bb05dcc557418e9f8c);
+            
+        
+
+        marker_e4594ad12dfe52d0493c761c02f0ac1c.bindPopup(popup_685efff4d2e0d30a7297b49f2cad6b9e)
+        ;
+
+        
+    
+    
+            var marker_fe6633741c95aa77f17ee62f5d3bef15 = L.marker(
+                [29.37087059020996, -94.89639282226562],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_d184d288f4960e2963890a97c4de3a04 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5f3caf10522f092e01c26d9d6d00541b = $(`<div id="html_5f3caf10522f092e01c26d9d6d00541b" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Texas City<br>         <b>State:</b> TX<br>         <b>Rank:</b> 20<br>         <b>Tonnage:</b> 33,721,312         </div>`)[0];
+                popup_d184d288f4960e2963890a97c4de3a04.setContent(html_5f3caf10522f092e01c26d9d6d00541b);
+            
+        
+
+        marker_fe6633741c95aa77f17ee62f5d3bef15.bindPopup(popup_d184d288f4960e2963890a97c4de3a04)
+        ;
+
+        
+    
+    
+            var marker_27873a718c3a5f039b49470e4da8a215 = L.marker(
+                [38.62699890136719, -90.19940185546875],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_7e851067b272b358b73112386b694b72 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b1bce42a0eb2a361e687e9560b47e261 = $(`<div id="html_b1bce42a0eb2a361e687e9560b47e261" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of St. Louis & East St. Louis<br>         <b>State:</b> MO/IL<br>         <b>Rank:</b> 21<br>         <b>Tonnage:</b> 30,487,796         </div>`)[0];
+                popup_7e851067b272b358b73112386b694b72.setContent(html_b1bce42a0eb2a361e687e9560b47e261);
+            
+        
+
+        marker_27873a718c3a5f039b49470e4da8a215.bindPopup(popup_7e851067b272b358b73112386b694b72)
+        ;
+
+        
+    
+    
+            var marker_a9a90ba8d1716be08335213a40d6639b = L.marker(
+                [38.41365051269531, -82.44673156738281],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_5e934dc78b4d5df1bd2a69b09fa35f6c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf95d2618820ae34ce4264303c8e0937 = $(`<div id="html_cf95d2618820ae34ce4264303c8e0937" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Huntington Tri-State<br>         <b>State:</b> WV/KY/OH<br>         <b>Rank:</b> 22<br>         <b>Tonnage:</b> 29,699,657         </div>`)[0];
+                popup_5e934dc78b4d5df1bd2a69b09fa35f6c.setContent(html_cf95d2618820ae34ce4264303c8e0937);
+            
+        
+
+        marker_a9a90ba8d1716be08335213a40d6639b.bindPopup(popup_5e934dc78b4d5df1bd2a69b09fa35f6c)
+        ;
+
+        
+    
+    
+            var marker_8e70552a1559351cea67916ee4b0fdb3 = L.marker(
+                [39.952579498291016, -75.16522216796875],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_172593b0dcacc6ed45ef2d6dc0774ee0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_20dd9853f7a50177da9dc71fa97bf865 = $(`<div id="html_20dd9853f7a50177da9dc71fa97bf865" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Philadelphia<br>         <b>State:</b> PA<br>         <b>Rank:</b> 23<br>         <b>Tonnage:</b> 28,517,760         </div>`)[0];
+                popup_172593b0dcacc6ed45ef2d6dc0774ee0.setContent(html_20dd9853f7a50177da9dc71fa97bf865);
+            
+        
+
+        marker_8e70552a1559351cea67916ee4b0fdb3.bindPopup(popup_172593b0dcacc6ed45ef2d6dc0774ee0)
+        ;
+
+        
+    
+    
+            var marker_125c919fbffefe45d31fc7c4bbaef2bb = L.marker(
+                [27.94985008239746, -82.44525909423828],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_16cd9b52e5ef377ac505e604999bc765 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c319b4e8510a39b8ebd0a15ca11cd566 = $(`<div id="html_c319b4e8510a39b8ebd0a15ca11cd566" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Tampa Bay<br>         <b>State:</b> FL<br>         <b>Rank:</b> 24<br>         <b>Tonnage:</b> 28,511,760         </div>`)[0];
+                popup_16cd9b52e5ef377ac505e604999bc765.setContent(html_c319b4e8510a39b8ebd0a15ca11cd566);
+            
+        
+
+        marker_125c919fbffefe45d31fc7c4bbaef2bb.bindPopup(popup_16cd9b52e5ef377ac505e604999bc765)
+        ;
+
+        
+    
+    
+            var marker_09049a7fbf9ef3ea37ddb6e76f686898 = L.marker(
+                [61.10499954223633, -146.47500610351562],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_335b0d8a7dd5057e1db6901076e2cf13 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6cdc2a9ac33cfcc35b500f404ff2a3c4 = $(`<div id="html_6cdc2a9ac33cfcc35b500f404ff2a3c4" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Valdez<br>         <b>State:</b> AK<br>         <b>Rank:</b> 25<br>         <b>Tonnage:</b> 25,113,231         </div>`)[0];
+                popup_335b0d8a7dd5057e1db6901076e2cf13.setContent(html_6cdc2a9ac33cfcc35b500f404ff2a3c4);
+            
+        
+
+        marker_09049a7fbf9ef3ea37ddb6e76f686898.bindPopup(popup_335b0d8a7dd5057e1db6901076e2cf13)
+        ;
+
+        
+    
+    
+            var marker_0db9ee39b6e3fb1ab53330a028a53c03 = L.marker(
+                [46.78667068481445, -92.1004867553711],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_e754a2e1c4202e267ecd7cdd7d4b7316 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ef52fe953ce60c2ee6ab0a62b15d633c = $(`<div id="html_ef52fe953ce60c2ee6ab0a62b15d633c" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Twin Ports Duluth/Superior<br>         <b>State:</b> MN/WI<br>         <b>Rank:</b> 26<br>         <b>Tonnage:</b> 25,071,110         </div>`)[0];
+                popup_e754a2e1c4202e267ecd7cdd7d4b7316.setContent(html_ef52fe953ce60c2ee6ab0a62b15d633c);
+            
+        
+
+        marker_0db9ee39b6e3fb1ab53330a028a53c03.bindPopup(popup_e754a2e1c4202e267ecd7cdd7d4b7316)
+        ;
+
+        
+    
+    
+            var marker_d0f864f1e2d55d77f275e89656296fa7 = L.marker(
+                [32.78459930419922, -79.92400360107422],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_f16f30d69161647483c532bdea16dbfc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f5a9a1f836e0c7cf12d75af7fadfd1f1 = $(`<div id="html_f5a9a1f836e0c7cf12d75af7fadfd1f1" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Charleston<br>         <b>State:</b> SC<br>         <b>Rank:</b> 27<br>         <b>Tonnage:</b> 24,947,482         </div>`)[0];
+                popup_f16f30d69161647483c532bdea16dbfc.setContent(html_f5a9a1f836e0c7cf12d75af7fadfd1f1);
+            
+        
+
+        marker_d0f864f1e2d55d77f275e89656296fa7.bindPopup(popup_f16f30d69161647483c532bdea16dbfc)
+        ;
+
+        
+    
+    
+            var marker_13fa3108c44607ac1c6d8ae4ecdd0a58 = L.marker(
+                [41.64400100708008, -87.15499877929688],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_8d3a94b8ad3c99fe66213d3cf273ac6c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e930d868c0a94a3655a79bc34cf5417b = $(`<div id="html_e930d868c0a94a3655a79bc34cf5417b" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Northern Indiana Maritime District<br>         <b>State:</b> IN<br>         <b>Rank:</b> 28<br>         <b>Tonnage:</b> 24,684,060         </div>`)[0];
+                popup_8d3a94b8ad3c99fe66213d3cf273ac6c.setContent(html_e930d868c0a94a3655a79bc34cf5417b);
+            
+        
+
+        marker_13fa3108c44607ac1c6d8ae4ecdd0a58.bindPopup(popup_8d3a94b8ad3c99fe66213d3cf273ac6c)
+        ;
+
+        
+    
+    
+            var marker_a4740e0f1a02dc3dee77c3ba33dd5cef = L.marker(
+                [30.355100631713867, -88.54791259765625],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_edb2a742c3de4245edafea6f9b71991a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_69095a095e220af178d56d52a64be058 = $(`<div id="html_69095a095e220af178d56d52a64be058" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Pascagoula<br>         <b>State:</b> MS<br>         <b>Rank:</b> 29<br>         <b>Tonnage:</b> 23,096,778         </div>`)[0];
+                popup_edb2a742c3de4245edafea6f9b71991a.setContent(html_69095a095e220af178d56d52a64be058);
+            
+        
+
+        marker_a4740e0f1a02dc3dee77c3ba33dd5cef.bindPopup(popup_edb2a742c3de4245edafea6f9b71991a)
+        ;
+
+        
+    
+    
+            var marker_9cde459262502be1fc02598c92e4132f = L.marker(
+                [47.599998474121094, -122.3499984741211],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_c68eed77dcdd161244a153b11546727a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_80423ec6643e75e9b2746657fbd874f3 = $(`<div id="html_80423ec6643e75e9b2746657fbd874f3" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Seattle<br>         <b>State:</b> WA<br>         <b>Rank:</b> 30<br>         <b>Tonnage:</b> 22,964,546         </div>`)[0];
+                popup_c68eed77dcdd161244a153b11546727a.setContent(html_80423ec6643e75e9b2746657fbd874f3);
+            
+        
+
+        marker_9cde459262502be1fc02598c92e4132f.bindPopup(popup_c68eed77dcdd161244a153b11546727a)
+        ;
+
+        
+    
+    
+            var marker_bd439b22234ad6e2374520924b72f81b = L.marker(
+                [47.26028060913086, -122.40833282470703],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_5f936f6cb6b95cc665fa5e09c12ae367 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50e9d3c1fa91a9238b570af610f58147 = $(`<div id="html_50e9d3c1fa91a9238b570af610f58147" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Tacoma<br>         <b>State:</b> WA<br>         <b>Rank:</b> 31<br>         <b>Tonnage:</b> 21,575,059         </div>`)[0];
+                popup_5f936f6cb6b95cc665fa5e09c12ae367.setContent(html_50e9d3c1fa91a9238b570af610f58147);
+            
+        
+
+        marker_bd439b22234ad6e2374520924b72f81b.bindPopup(popup_5f936f6cb6b95cc665fa5e09c12ae367)
+        ;
+
+        
+    
+    
+            var marker_84e075cda36addd53be0ca165ea4551c = L.marker(
+                [37.915000915527344, -122.36100006103516],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_96c795cd7d45b4b14a62aab9965e4798 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_02a4226bb3fccca97bc2518083239fc0 = $(`<div id="html_02a4226bb3fccca97bc2518083239fc0" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Richmond<br>         <b>State:</b> CA<br>         <b>Rank:</b> 32<br>         <b>Tonnage:</b> 21,050,741         </div>`)[0];
+                popup_96c795cd7d45b4b14a62aab9965e4798.setContent(html_02a4226bb3fccca97bc2518083239fc0);
+            
+        
+
+        marker_84e075cda36addd53be0ca165ea4551c.bindPopup(popup_96c795cd7d45b4b14a62aab9965e4798)
+        ;
+
+        
+    
+    
+            var marker_b32d3afae653fc44df9b1506110ea7b1 = L.marker(
+                [45.57310104370117, -122.70240020751953],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_f365c2446bc9d4e2fdea8d4ef91e9116 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_16f0ef5bd0a0dc8fcadb9e4101a835a3 = $(`<div id="html_16f0ef5bd0a0dc8fcadb9e4101a835a3" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Portland<br>         <b>State:</b> OR<br>         <b>Rank:</b> 33<br>         <b>Tonnage:</b> 20,706,345         </div>`)[0];
+                popup_f365c2446bc9d4e2fdea8d4ef91e9116.setContent(html_16f0ef5bd0a0dc8fcadb9e4101a835a3);
+            
+        
+
+        marker_b32d3afae653fc44df9b1506110ea7b1.bindPopup(popup_f365c2446bc9d4e2fdea8d4ef91e9116)
+        ;
+
+        
+    
+    
+            var marker_cb978487a15fa51e3e4199351642be14 = L.marker(
+                [26.086109161376953, -80.11528015136719],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_0c3ac0291880dc2bdcf9b3fcdb6b1505 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_44a1e05d7d7ef3689223141de54f7697 = $(`<div id="html_44a1e05d7d7ef3689223141de54f7697" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port Everglades<br>         <b>State:</b> FL<br>         <b>Rank:</b> 34<br>         <b>Tonnage:</b> 20,440,573         </div>`)[0];
+                popup_0c3ac0291880dc2bdcf9b3fcdb6b1505.setContent(html_44a1e05d7d7ef3689223141de54f7697);
+            
+        
+
+        marker_cb978487a15fa51e3e4199351642be14.bindPopup(popup_0c3ac0291880dc2bdcf9b3fcdb6b1505)
+        ;
+
+        
+    
+    
+            var marker_6d368da1209e30b2c053e67a0ec5a611 = L.marker(
+                [39.92594909667969, -75.11962127685547],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_39a4c61b5e375f048e2672c7a3e8398a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_790846888a07dd7f8cf5c526ea30f0ef = $(`<div id="html_790846888a07dd7f8cf5c526ea30f0ef" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> South Jersey<br>         <b>State:</b> NJ<br>         <b>Rank:</b> 35<br>         <b>Tonnage:</b> 20,254,325         </div>`)[0];
+                popup_39a4c61b5e375f048e2672c7a3e8398a.setContent(html_790846888a07dd7f8cf5c526ea30f0ef);
+            
+        
+
+        marker_6d368da1209e30b2c053e67a0ec5a611.bindPopup(popup_39a4c61b5e375f048e2672c7a3e8398a)
+        ;
+
+        
+    
+    
+            var marker_dd9278e03b2a56238a5f6f4e43cc9e1f = L.marker(
+                [37.795528411865234, -122.28459930419922],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_229e0ace106d94691b9e576aded64576 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_07009db7b84543d85d0e61f4f1aec22c = $(`<div id="html_07009db7b84543d85d0e61f4f1aec22c" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Oakland<br>         <b>State:</b> CA<br>         <b>Rank:</b> 36<br>         <b>Tonnage:</b> 19,439,762         </div>`)[0];
+                popup_229e0ace106d94691b9e576aded64576.setContent(html_07009db7b84543d85d0e61f4f1aec22c);
+            
+        
+
+        marker_dd9278e03b2a56238a5f6f4e43cc9e1f.bindPopup(popup_229e0ace106d94691b9e576aded64576)
+        ;
+
+        
+    
+    
+            var marker_7c2c94f72ddd563e8035537940936c3a = L.marker(
+                [46.02280044555664, -122.8656997680664],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_3ffed9208f45da33d205e2c6b56d8100 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5e4eda55fc16ad5822f04c2382ac63ed = $(`<div id="html_5e4eda55fc16ad5822f04c2382ac63ed" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Kalama<br>         <b>State:</b> WA<br>         <b>Rank:</b> 37<br>         <b>Tonnage:</b> 18,140,886         </div>`)[0];
+                popup_3ffed9208f45da33d205e2c6b56d8100.setContent(html_5e4eda55fc16ad5822f04c2382ac63ed);
+            
+        
+
+        marker_7c2c94f72ddd563e8035537940936c3a.bindPopup(popup_3ffed9208f45da33d205e2c6b56d8100)
+        ;
+
+        
+    
+    
+            var marker_3b7b56d3321dc2292320b0625650804d = L.marker(
+                [30.380830764770508, -81.56443786621094],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_cd644e152ec8955f469a30cec56f89d1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4eb1258cdc4405e5a0c9aa2745cabea5 = $(`<div id="html_4eb1258cdc4405e5a0c9aa2745cabea5" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Jacksonville<br>         <b>State:</b> FL<br>         <b>Rank:</b> 38<br>         <b>Tonnage:</b> 16,701,370         </div>`)[0];
+                popup_cd644e152ec8955f469a30cec56f89d1.setContent(html_4eb1258cdc4405e5a0c9aa2745cabea5);
+            
+        
+
+        marker_3b7b56d3321dc2292320b0625650804d.bindPopup(popup_cd644e152ec8955f469a30cec56f89d1)
+        ;
+
+        
+    
+    
+            var marker_a763ee802a026dfc6b8829fc07c94151 = L.marker(
+                [40.44062042236328, -79.99588775634766],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_7b695686c557f88a870b5f14e2d71cef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5fd49862f8e2279a0b84a888a0a9443f = $(`<div id="html_5fd49862f8e2279a0b84a888a0a9443f" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Pittsburgh<br>         <b>State:</b> PA<br>         <b>Rank:</b> 39<br>         <b>Tonnage:</b> 15,536,051         </div>`)[0];
+                popup_7b695686c557f88a870b5f14e2d71cef.setContent(html_5fd49862f8e2279a0b84a888a0a9443f);
+            
+        
+
+        marker_a763ee802a026dfc6b8829fc07c94151.bindPopup(popup_7b695686c557f88a870b5f14e2d71cef)
+        ;
+
+        
+    
+    
+            var marker_35dfdccd7cebafb7bdb7ec1ff45dd4e6 = L.marker(
+                [37.96065902709961, -89.98594665527344],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_d8de7dfbf235c2c4059c42ad18b02c97 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_89b136eede96ee4ffa0748b3e751f9a7 = $(`<div id="html_89b136eede96ee4ffa0748b3e751f9a7" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> New Bourbon Port Authority<br>         <b>State:</b> MO<br>         <b>Rank:</b> 40<br>         <b>Tonnage:</b> 15,506,754         </div>`)[0];
+                popup_d8de7dfbf235c2c4059c42ad18b02c97.setContent(html_89b136eede96ee4ffa0748b3e751f9a7);
+            
+        
+
+        marker_35dfdccd7cebafb7bdb7ec1ff45dd4e6.bindPopup(popup_d8de7dfbf235c2c4059c42ad18b02c97)
+        ;
+
+        
+    
+    
+            var marker_567f334fc325fe87b4002d31f1e65fdf = L.marker(
+                [39.90999984741211, -91.41000366210938],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_80d3d4a63d2e420fd7abef8fad9fff14 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7f2ce156d228562ef4d5a9e5578cee91 = $(`<div id="html_7f2ce156d228562ef4d5a9e5578cee91" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Mid-America Port<br>         <b>State:</b> IA/IL/MO<br>         <b>Rank:</b> 41<br>         <b>Tonnage:</b> 14,952,343         </div>`)[0];
+                popup_80d3d4a63d2e420fd7abef8fad9fff14.setContent(html_7f2ce156d228562ef4d5a9e5578cee91);
+            
+        
+
+        marker_567f334fc325fe87b4002d31f1e65fdf.bindPopup(popup_80d3d4a63d2e420fd7abef8fad9fff14)
+        ;
+
+        
+    
+    
+            var marker_d660898c5b424c8dded1672697ec7422 = L.marker(
+                [40.63167190551758, -89.62471771240234],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_df612ba6f51d95c18438eb9aa4b4b0ce = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_85c9df428f991a7515f811f5a3fed61f = $(`<div id="html_85c9df428f991a7515f811f5a3fed61f" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Illinois Waterway Ports<br>         <b>State:</b> IL<br>         <b>Rank:</b> 42<br>         <b>Tonnage:</b> 14,946,034         </div>`)[0];
+                popup_df612ba6f51d95c18438eb9aa4b4b0ce.setContent(html_85c9df428f991a7515f811f5a3fed61f);
+            
+        
+
+        marker_d660898c5b424c8dded1672697ec7422.bindPopup(popup_df612ba6f51d95c18438eb9aa4b4b0ce)
+        ;
+
+        
+    
+    
+            var marker_22d849da99d5efd21ac933e2f7cdc783 = L.marker(
+                [47.01020050048828, -91.67790222167969],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_b7d72fdaee937c8e2e987340656ffe6f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ea3c7828dfc8051fadd10b647989f4df = $(`<div id="html_ea3c7828dfc8051fadd10b647989f4df" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Two Harbors<br>         <b>State:</b> MN<br>         <b>Rank:</b> 43<br>         <b>Tonnage:</b> 13,499,847         </div>`)[0];
+                popup_b7d72fdaee937c8e2e987340656ffe6f.setContent(html_ea3c7828dfc8051fadd10b647989f4df);
+            
+        
+
+        marker_22d849da99d5efd21ac933e2f7cdc783.bindPopup(popup_b7d72fdaee937c8e2e987340656ffe6f)
+        ;
+
+        
+    
+    
+            var marker_ce535f67b6b82abdef4677bacaf5f5b3 = L.marker(
+                [42.362998962402344, -71.03679656982422],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_3a3653893fcc4d383394607ebb3c1109 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fbb20714c9492360c39181170cf58d84 = $(`<div id="html_fbb20714c9492360c39181170cf58d84" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Boston<br>         <b>State:</b> MA<br>         <b>Rank:</b> 44<br>         <b>Tonnage:</b> 13,322,582         </div>`)[0];
+                popup_3a3653893fcc4d383394607ebb3c1109.setContent(html_fbb20714c9492360c39181170cf58d84);
+            
+        
+
+        marker_ce535f67b6b82abdef4677bacaf5f5b3.bindPopup(popup_3a3653893fcc4d383394607ebb3c1109)
+        ;
+
+        
+    
+    
+            var marker_1b7ff20b627b8e7e571bcb06878b25cd = L.marker(
+                [21.305999755859375, -157.86900329589844],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_d7d50b0e6c64db95507b69419b14afa2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c14f687d3b9d4a68ca25d7e4299f29e1 = $(`<div id="html_c14f687d3b9d4a68ca25d7e4299f29e1" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Honolulu<br>         <b>State:</b> HI<br>         <b>Rank:</b> 45<br>         <b>Tonnage:</b> 12,261,506         </div>`)[0];
+                popup_d7d50b0e6c64db95507b69419b14afa2.setContent(html_c14f687d3b9d4a68ca25d7e4299f29e1);
+            
+        
+
+        marker_1b7ff20b627b8e7e571bcb06878b25cd.bindPopup(popup_d7d50b0e6c64db95507b69419b14afa2)
+        ;
+
+        
+    
+    
+            var marker_62687b2b475f4ff26e1ff0164a31c099 = L.marker(
+                [29.301300048828125, -94.79769897460938],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_edadb2b0608c6a497b19ed192d8d535c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_68b02a2c5af6d288429f5889d489ac55 = $(`<div id="html_68b02a2c5af6d288429f5889d489ac55" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Galveston<br>         <b>State:</b> TX<br>         <b>Rank:</b> 46<br>         <b>Tonnage:</b> 11,945,182         </div>`)[0];
+                popup_edadb2b0608c6a497b19ed192d8d535c.setContent(html_68b02a2c5af6d288429f5889d489ac55);
+            
+        
+
+        marker_62687b2b475f4ff26e1ff0164a31c099.bindPopup(popup_edadb2b0608c6a497b19ed192d8d535c)
+        ;
+
+        
+    
+    
+            var marker_2e3f0f303f2fe6756361ace8baae12e1 = L.marker(
+                [46.1138916015625, -122.95832824707031],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_e80364aee055e6023ef65549191b1e80 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9da50408b5ab3d4ff0441d6107bfa4b1 = $(`<div id="html_9da50408b5ab3d4ff0441d6107bfa4b1" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Longview<br>         <b>State:</b> WA<br>         <b>Rank:</b> 47<br>         <b>Tonnage:</b> 11,071,285         </div>`)[0];
+                popup_e80364aee055e6023ef65549191b1e80.setContent(html_9da50408b5ab3d4ff0441d6107bfa4b1);
+            
+        
+
+        marker_2e3f0f303f2fe6756361ace8baae12e1.bindPopup(popup_e80364aee055e6023ef65549191b1e80)
+        ;
+
+        
+    
+    
+            var marker_6550031e2bbf9595fc6a2fee31c4d62d = L.marker(
+                [45.63999938964844, -122.69999694824219],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_0ea58c70d3a6cac9b93e09d46a78863f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8bbf13505c39e8ac98af4148b1440682 = $(`<div id="html_8bbf13505c39e8ac98af4148b1440682" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Vancouver USA<br>         <b>State:</b> WA<br>         <b>Rank:</b> 48<br>         <b>Tonnage:</b> 10,198,602         </div>`)[0];
+                popup_0ea58c70d3a6cac9b93e09d46a78863f.setContent(html_8bbf13505c39e8ac98af4148b1440682);
+            
+        
+
+        marker_6550031e2bbf9595fc6a2fee31c4d62d.bindPopup(popup_0ea58c70d3a6cac9b93e09d46a78863f)
+        ;
+
+        
+    
+    
+            var marker_a8e0cd2f1186f6001eef6819d163b233 = L.marker(
+                [41.519439697265625, -81.68860626220703],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_2232aeec77d71357efe41a926fe3f008 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8bf9f379927afc00b08a588a47c58dd0 = $(`<div id="html_8bf9f379927afc00b08a588a47c58dd0" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of Cleveland<br>         <b>State:</b> OH<br>         <b>Rank:</b> 49<br>         <b>Tonnage:</b> 9,442,739         </div>`)[0];
+                popup_2232aeec77d71357efe41a926fe3f008.setContent(html_8bf9f379927afc00b08a588a47c58dd0);
+            
+        
+
+        marker_a8e0cd2f1186f6001eef6819d163b233.bindPopup(popup_2232aeec77d71357efe41a926fe3f008)
+        ;
+
+        
+    
+    
+            var marker_f9fb1253646a4f0dbb83865d29a7c910 = L.marker(
+                [18.44301986694336, -66.10018920898438],
+                {
+}
+            ).addTo(map_dd42fc36ad3d1c304b16cb1b3039a5b3);
+        
+    
+        var popup_493e62653b2d6245ac172981faa65b43 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_006ee312d8682ae765e5bba38d352b2c = $(`<div id="html_006ee312d8682ae765e5bba38d352b2c" style="width: 100.0%; height: 100.0%;">         <b>Port:</b> Port of San Juan<br>         <b>State:</b> PR<br>         <b>Rank:</b> 50<br>         <b>Tonnage:</b> 9,337,163         </div>`)[0];
+                popup_493e62653b2d6245ac172981faa65b43.setContent(html_006ee312d8682ae765e5bba38d352b2c);
+            
+        
+
+        marker_f9fb1253646a4f0dbb83865d29a7c910.bindPopup(popup_493e62653b2d6245ac172981faa65b43)
+        ;
+
+        
+    
+</script>
+</html>
