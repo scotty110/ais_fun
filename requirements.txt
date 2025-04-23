@@ -1,0 +1,7 @@
+fastparquet
+pyarrow
+duckdb
+ipykernel
+shapely
+folium
+jax

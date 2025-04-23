@@ -4,14 +4,12 @@ import json
 import glob 
 import os.path
 
-
 def style_function(feature):
     return {'color': '#6C2CED', 'weight': 3, 'opacity': 0.7}
 
-
 if __name__ == '__main__':
     # Connect to DB (and load geo extension)
-    conn = duckdb.connect() 
+    conn = duckdb.connect()
     conn.execute("INSTALL spatial; LOAD spatial;")
 
     # Get list of parquet files to import into duckdb
@@ -32,7 +30,7 @@ if __name__ == '__main__':
             CREATE OR REPLACE VIEW TimeTable AS \
             SELECT MMSI, BaseDateTime, LAT, LON \
             FROM ais \
-            WHERE BaseDateTime BETWEEN '{start}' AND '{end}' \
+            WHERE BaseDateTime BETWEEN '{start}' AND '{end}'
         """
     conn.execute(sql_s)
 
@@ -44,7 +42,7 @@ if __name__ == '__main__':
                 FROM TimeTable \
                 ORDER BY RANDOM() \
                 LIMIT 1 \
-            ) \
+            )
         """
     conn.execute(sql_query)
 
@@ -57,23 +55,24 @@ if __name__ == '__main__':
     # Drop the TimeTable view
     conn.execute("DROP VIEW TimeTable")
     
-    # Create a temporary table for filtered AIS data
+    # Create a temporary table for filtered AIS data including VesselName
     filtered_ais_sql = f"""\
             CREATE OR REPLACE TEMPORARY VIEW filtered_ais AS 
-            SELECT MMSI, BaseDateTime,
+            SELECT MMSI, BaseDateTime, VesselName,
                 ST_Point(LON, LAT) AS geom
             FROM ais
             WHERE BaseDateTime BETWEEN '{start}' AND '{end}'
         """
     conn.execute(filtered_ais_sql)
 
-    # Create the spatial_tracks view
+    # Create the spatial_tracks view, propagating VesselName
     spatial_tracks_sql = f"""\
         CREATE OR REPLACE VIEW spatial_tracks AS 
         WITH ordered_points AS (
             SELECT 
                 MMSI, 
                 BaseDateTime, 
+                VesselName,
                 geom,
                 LAG(geom) OVER (PARTITION BY MMSI ORDER BY BaseDateTime) AS prev_geom
             FROM filtered_ais
@@ -82,6 +81,7 @@ if __name__ == '__main__':
             SELECT 
                 MMSI, 
                 BaseDateTime, 
+                VesselName,
                 geom,
                 CASE 
                     WHEN prev_geom IS NULL OR ST_Distance_Spheroid(geom, prev_geom) <= 500 
@@ -94,35 +94,34 @@ if __name__ == '__main__':
             SELECT 
                 MMSI, 
                 BaseDateTime, 
+                VesselName,
                 geom,
                 SUM(gap_flag) OVER (PARTITION BY MMSI ORDER BY BaseDateTime) AS segment_id
             FROM gaps
         )
         SELECT 
             MMSI,
+            MIN(VesselName) AS VesselName,
             ST_MakeLine(array_agg(geom ORDER BY BaseDateTime)) AS track
         FROM segmented
         GROUP BY MMSI, segment_id
-        HAVING COUNT(geom) >= 4 
+        HAVING COUNT(geom) >= 3 
     """
     conn.execute(spatial_tracks_sql)
 
     # Get Count of records (number of tracks)
     count = conn.execute("SELECT COUNT(*) FROM spatial_tracks").fetchall()[0]
     print(f'Number of records for tracks: {count}')
-    print( f"number of unique MMSI's: {conn.execute('SELECT COUNT(DISTINCT MMSI) FROM spatial_tracks').fetchall()[0][0]}" )
+    print(f"number of unique MMSI's: {conn.execute('SELECT COUNT(DISTINCT MMSI) FROM spatial_tracks').fetchall()[0][0]}")
 
-    # Plot Tracks on map
-    # Plot Tracks on map
-    # Query with ST_AsGeoJSON to get the track as a GeoJSON string
-    track_data = conn.execute("SELECT MMSI, ST_AsGeoJSON(track) as track_geo FROM spatial_tracks LIMIT 2000").fetchall()
+    # Query with ST_AsGeoJSON to get the track as a GeoJSON string along with VesselName
+    track_data = conn.execute("SELECT MMSI, VesselName, ST_AsGeoJSON(track) as track_geo FROM spatial_tracks LIMIT 2000").fetchall()
     if not track_data:
         print("No track data available.")
         exit()
     
     # Create a map centered on the first track’s start point
-    # Create a map centered on the first track’s start point
-    first_geo = json.loads(track_data[0][1])
+    first_geo = json.loads(track_data[0][2])
     first_coords = first_geo.get("coordinates", [])
     if not first_coords:
         print("No coordinates found in first track.")
@@ -130,8 +129,8 @@ if __name__ == '__main__':
     start_lon, start_lat = first_coords[0]
     m = folium.Map(location=[start_lat, start_lon], zoom_start=10)
 
-    # For each track, create a GeoJSON feature with start/end properties and add it to the map.
-    for mmsi, track_geo in track_data:
+    # For each track, create a GeoJSON feature with MMSI and VesselName displayed on click
+    for mmsi, vessel_name, track_geo in track_data:
         geo_obj = json.loads(track_geo)
         coords = geo_obj.get("coordinates", [])
         if not coords or len(coords) < 2:
@@ -139,14 +138,19 @@ if __name__ == '__main__':
         feature = {
             "type": "Feature",
             "geometry": geo_obj,
-            "properties": {"mmsi": mmsi}
+            "properties": {"MMSI": mmsi, "VesselName": vessel_name}
         }
-        folium.GeoJson(
+        geojson = folium.GeoJson(
             feature,
-            style_function=style_function  # initial style blue
-        ).add_to(m)
+            style_function=style_function,
+            popup=folium.GeoJsonPopup(
+                fields=["MMSI", "VesselName"],
+                aliases=["MMSI", "Vessel Name"],
+                localize=True
+            )
+        )
+        geojson.add_to(m)
 
     # Save the map to an HTML file.
     m.save('gis_track.html')
     print("Map saved as gis_track.html")
-
