@@ -31,7 +31,7 @@ sql_s = f"\
                 WHERE BaseDateTime BETWEEN '{start}' AND '{end}' \
             )\
             SELECT COUNT(*) FROM timeTable \
-            WHERE ST_DISTANCE( ST_POINT(LON, LAT), ST_POINT({lon}, {lat}) ) < {max_dist} \
+            WHERE ST_Distance_Sphere( ST_POINT(LON, LAT), ST_POINT({lon}, {lat}) ) < {max_dist} \
         "
 
 # Remove COUNT(*) to get dataframe

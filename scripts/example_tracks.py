@@ -84,7 +84,7 @@ if __name__ == '__main__':
                 VesselName,
                 geom,
                 CASE 
-                    WHEN prev_geom IS NULL OR ST_Distance_Spheroid(geom, prev_geom) <= 500 
+                    WHEN prev_geom IS NULL OR ST_Distance_Sphere(geom, prev_geom) <= 500 
                     THEN 0 
                     ELSE 1 
                 END AS gap_flag

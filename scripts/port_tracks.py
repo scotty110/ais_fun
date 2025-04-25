@@ -70,7 +70,7 @@ if __name__ == '__main__':
                 VesselName,
                 geom,
                 CASE 
-                    WHEN prev_geom IS NULL OR ST_Distance_Spheroid(geom, prev_geom) > 10 THEN 1 
+                    WHEN prev_geom IS NULL OR ST_Distance_Spheroid(geom, prev_geom) > 50 THEN 1 
                     ELSE 0 
                 END AS cluster_gap
             FROM ordered_points
@@ -102,7 +102,7 @@ if __name__ == '__main__':
                 geom,
                 CASE 
                     WHEN LAG(geom) OVER (PARTITION BY MMSI ORDER BY BaseDateTime) IS NULL 
-                        OR ST_Distance_Spheroid(geom, LAG(geom) OVER (PARTITION BY MMSI ORDER BY BaseDateTime)) <= 100 
+                        OR ST_Distance_Sphere(geom, LAG(geom) OVER (PARTITION BY MMSI ORDER BY BaseDateTime)) <= 100 
                     THEN 0 
                     ELSE 1 
                 END AS gap_flag
@@ -124,8 +124,10 @@ if __name__ == '__main__':
         FROM segmented
         GROUP BY MMSI, segment_id
         HAVING COUNT(geom) >= 3 
+        ORDER BY RANDOM()
+        LIMIT 1000
         """
-    conn.execute(spatial_tracks_sql)
+    conn.execute(f"{spatial_tracks_sql}")
 
     # Load Port Data
     ports_fname = '../gps_points/ports.csv'
@@ -148,7 +150,8 @@ if __name__ == '__main__':
         """
     conn.execute(create_view_sql)
 
-    # Only take the center of the tracks that are within 500m of a port (not perfect, but good enough for now)
+    # Only take the center of the tracks that are within 100m of a port (not perfect, but good enough for now)
+    # Also want to limit the number of tracks to 10,000 for performance
     sql_query = f"""
         SELECT st.MMSI, st.VesselName, ST_AsGeoJSON(st.track) as track_geo
         FROM spatial_tracks st
@@ -156,7 +159,7 @@ if __name__ == '__main__':
             SELECT 1
             FROM ports_data p
             WHERE ST_Intersects(
-                ST_Buffer(st.track, 500.0), 
+                ST_Buffer(st.track, 100.0), 
                 ST_Point(p.LON, p.LAT)
             )
         )
